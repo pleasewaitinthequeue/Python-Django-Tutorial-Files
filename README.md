@@ -12,7 +12,7 @@ Windows Instructions (Linux and Apple may be similar).
 
 ### Create your First Project
 Windows / Mac / Linux Instructions (should use same commands)
-1. Using the Command Prompt or Terminal program, Create a new Project `django-admin create [mysite]` where **mysite** refers to the name of the project.  The command should create a new directory in which it will write all of your project files.
+1. Using the Command Prompt or Terminal program, Create a new Project `django-admin startproject [mysite]` where **mysite** refers to the name of the project.  The command should create a new directory in which it will write all of your project files.
 2. Navigate your Command Prompt or Terminal into your project directory `cd mysite` before setting up a virtual python environment.
 3. Set up a virtual environment by calling:  `conda create --name mysite python=3.6` where mysite is the name of your project.
 4. Activate your virtual environment by calling:  `conda activate mysite`
