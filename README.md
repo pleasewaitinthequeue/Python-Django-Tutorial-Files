@@ -28,3 +28,87 @@ Windows / Mac / Linux Instructions (should use same commands)
 Django is a **Model, View, Template (MVT)** framework.
 
 [The Django 8 Hour Course](https://www.youtube.com/watch?v=JT80XhYJdBw&t) goes through the tutorial at a high level, but can be difficult to follow.  Make sure you have both resources open if you choose to work through the video.
+
+### Migrating to Oracle XE
+In order to migrate, you must upgrade to version 12+ of the XE database.  XE is Oracle's open source tool which can be downloaded free from its website. The version that was used can be downloaded [here](https://download.oracle.com/otn/nt/oracle18c/180000/OracleXE184_Win64.zip) for Windows.  Note that you will need to unzip these files prior to being able to install Oracle XE.  Oracle Requires acceptance of the license agreement, and you may have to create an Oracle Account in order to signin and begin the download.  You also need to install a driver so that python can talk directly to Oracle.  In the terminal type:
+```
+python -m pip install cx_Oracle --upgrade
+```
+Next, after Oracle XE has been installed, and we have the python driver we are ready to Migrate the application to the new database.  When we migrate, we are migrating our Object Relational Mapping only, not the specific records from our application.  Therefore, this should not be done with a fully developed application.  All knowledge of specific object records will be lost, but it's a snap to recreate them using Django Admin.
+
+Navigate to [settings.py](./mysite/settings.py) in the your project directory.  According to the tutorial, our project is actually called 'mysite' and it has an app in it called 'polls'.  The connection information for your Oracle XE database will need to be specified.  Note below how the old connection information has been commented out.  Your connection information may be different - the connection information below reflects this database superuser password which is set during the installation process.
+```
+#Before Editing Settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+===========================================================
+
+#After Editing Settings.py
+DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'xe',
+        'USER': 'system',
+        'PASSWORD': 'admin',
+        'HOST': '',
+        'PORT': '1521',
+    }
+}
+```
+Now you are ready to ask python to migrate your application.
+```
+python manage.py migrate
+```
+If there is nothing wrong, you will get a long list of OKs like the example below:
+```
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying polls.0001_initial... OK
+  Applying sessions.0001_initial... OK
+```
+
+If you are like me, you may have forgotten your superuser account and password in Python.  To create another one, simply run:
+```
+python manage.py createsuperuser
+```
+You should be able to run your server now, and it should by default create all of the object definitions that were in your previous database.  You can confirm this by running:
+```
+python manage.py runserver
+```
+Django should successfully start itself up with a connection to the database.
+```
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 09, 2019 - 15:26:39
+Django version 2.2.6, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+```
+To confirm that the migration was successful, simply visit [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and login with the superuser credentials that you created.  You should be able to add new objects using the Administrative menu.  To confirm that the information is being written to the database, you can use a tool like [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) to connect to your default database and verify that the tables were created and populated.  
