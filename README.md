@@ -1,4 +1,10 @@
-# Python Django Tutorial Files
+# Python Django Tutorial Files (Main)
+
+## Index
+1. [Project Root (that's where we are!)](./README.md)
+2. [/Project/Project](./mysite/project.md)
+3. [/Project/App](./polls/app.md)
+
 ### Setup Anaconda / Django / Atom
 Windows Instructions (Linux and Apple may be similar).
 1. [Install Anaconda](https://www.anaconda.com/distribution/), which is a set of tools that comes with Python distributions.  Optionally, you can install Python, but keep in mind that the commands below for creating your first project explicitly use 'conda' rather than the equivalen python or django commands.  To make sure that you have correctly installed Anaconda go to the Command Prompt or Terminal and type:  `conda info --all` which should spit out a number of details about your configuration environment.
@@ -111,4 +117,4 @@ Django version 2.2.6, using settings 'mysite.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
-To confirm that the migration was successful, simply visit [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and login with the superuser credentials that you created.  You should be able to add new objects using the Administrative menu.  To confirm that the information is being written to the database, you can use a tool like [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) to connect to your default database and verify that the tables were created and populated.  
+To confirm that the migration was successful, simply visit [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and login with the superuser credentials that you created.  You should be able to add new objects using the Administrative menu.  To confirm that the information is being written to the database, you can use a tool like [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) to connect to your default database and verify that the tables were created and populated.
