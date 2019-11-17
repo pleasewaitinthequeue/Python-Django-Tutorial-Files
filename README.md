@@ -7,7 +7,7 @@
 
 ### Setup Anaconda / Django / Atom
 Windows Instructions (Linux and Apple may be similar).
-1. [Install Anaconda](https://www.anaconda.com/distribution/), which is a set of tools that comes with Python distributions.  Optionally, you can install Python, but keep in mind that the commands below for creating your first project explicitly use 'conda' rather than the equivalen python or django commands.  To make sure that you have correctly installed Anaconda go to the Command Prompt or Terminal and type:  `conda info --all` which should spit out a number of details about your configuration environment.
+1. [Install Anaconda](https://www.anaconda.com/distribution/), which is a set of tools that comes with Python distributions.  Optionally, you can install Python, but keep in mind that the commands below for creating your first project explicitly use 'conda' rather than the equivalent python or django commands.  To make sure that you have correctly installed Anaconda go to the Command Prompt or Terminal and type:  `conda info --all` which should spit out a number of details about your configuration environment.
 2. Install the [Atom Integrated Development Environment (IDE)](https://atom.io)
 3.    Use the Atom package installer (**File >> Settings >> Install**) to add the following packages:
   + platformio-ide-terminal - this package provides a terminal window to use in Atom
