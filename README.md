@@ -118,3 +118,25 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
 To confirm that the migration was successful, simply visit [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and login with the superuser credentials that you created.  You should be able to add new objects using the Administrative menu.  To confirm that the information is being written to the database, you can use a tool like [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) to connect to your default database and verify that the tables were created and populated.
+
+### Creating a new 'App'
+
+An app lives behind your 'project' path.  Many python apps can live in the same project.  You create a new app by typing the following command into the command prompt:
+
+```
+python manage.py startapp appname
+```
+
+This will create a new directory with the following files:
+
+```
+/project/appname/
+  __init__.py
+  admin.py
+  apps.py
+  migrations/
+    __init__.py
+  models.py
+  tests.py
+  views.py
+```
