@@ -5,6 +5,9 @@ from django.db import models
 # models that are currently in 'the jokeable' lucidchart
 # https://www.lucidchart.com/documents/edit/920b7f8e-419b-4316-b131-b79178fd8c96/
 
+
+# Django has a built in User Object - here is a link to the documentation
+# https://docs.djangoproject.com/en/2.2/topics/auth/default/
 """
 a description of user.py
 =======================
