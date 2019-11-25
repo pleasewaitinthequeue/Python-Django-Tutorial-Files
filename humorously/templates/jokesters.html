@@ -1,6 +1,11 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'humorously/style.css' %}">
+<ul>
+  <li>
+    <a href="{% url '' %}">Index</a>
+  </li>
+</ul>
 {% if latest_jokester_list %}
   <h1>The Jokester List</h1>
     <ul>
