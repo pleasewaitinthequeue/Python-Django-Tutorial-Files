@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -8,6 +11,20 @@ from django.db import models
 
 # Django has a built in User Object - here is a link to the documentation
 # https://docs.djangoproject.com/en/2.2/topics/auth/default/
+class Jokester(models.Model):
+    last_name = models.CharField(max_length=150)
+    first_name = models.CharField(max_length=150)
+    email_address = models.CharField(max_length=150)
+    city_residence = models.CharField(max_length=150)
+    state = models.CharField(max_length=150)
+    zipcode = models.CharField(max_length=25)
+    country = models.CharField(max_length=150)
+    created = models.DateTimeField(
+        default=timezone.datetime.now()
+    )
+    def __str__(self):
+        return self.last_name + ", " + self.first_name
+
 """
 a description of user.py
 =======================

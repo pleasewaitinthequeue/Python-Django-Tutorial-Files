@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'humorously/style.css' %}">
+{% if latest_jokester_list %}
+  <h1>The Jokester List</h1>
+    <ul>
+    {% for jokester in latest_jokester_list %}
+        <li>{{ jokester }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jokesters are available.</p>
+{% endif %}
