@@ -1,3 +1,30 @@
 h1 {
   color:navy
 }
+
+.banner{
+  background-color: #333333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.banner-item{
+  float: left;
+}
+
+.banner-item a{
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  color:#000000;
+  text-decoration: none;
+}
+
+.banner-item a:hover{
+  background-color: #555555;
+  color: white;
+}

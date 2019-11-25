@@ -7,6 +7,7 @@ from django.utils import timezone
 from .models import Jokester
 # Create your views here.
 #@login_required
+
 def index(request):
     return HttpResponse("<h1>Under construction.</h1>")
     #template_name = 'humorously/index.html'
