@@ -62,7 +62,20 @@ DATABASES = {
 }
 ```
 3. Install cx_Oracle Driver using python command:  ```python -m pip install cx_Oracle --upgrade```
-4.
+4. If you do not have [Git Command Line interface](https://git-scm.com/downloads), you may need to install it.  To check type in ```git --version``` on your terminal or command prompt - if your system spits out a version number, you have already installed it.
+1. You can now clone the project by switching to the directory in which you want to clone the project to using ```cd directoryname``` and then typing ```git clone https://github.iu.edu/jomalair/Python-Django-Tutorial-Files.git```.
+2. If you have installed all the necessary dependencies, then once you are done, you should be able to type ```python manage.py runserver``` and see a screen similar to this:
+
+```
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 29, 2019 - 13:48:30
+Django version 2.2.6, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+```
 
 ### Setup Anaconda / Django / Atom
 Windows Instructions (Linux and Apple may be similar).
