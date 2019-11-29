@@ -5,6 +5,65 @@
 2. [/Project/Project](./mysite/project.md)
 3. [/Project/App](./polls/app.md)
 
+## Project Master Checklist
+The master checklist is divided into Functional Requirements - things that are required to make the website usable, and Technical Requirements - things that are required to score points on our final project.  It is implied that our goal is to build a website that uses Djangos MVT model to connect the Pythonic front end, to the Relational Oracle Database Back End.  Below you will find the checklists for each.
+### Functional Requirements (Minimum Viable Product)
+- [ ] Homepage - Random Objects from the Database on it
+  - [ ] Procedure / Function to get Random:  Joke, User, Category, Set
+- [ ] Search Page (package?)
+  - [ ] Procedure / Function to search in different ways using user keywords using dependencies
+- [ ] User Account Page
+  - [ ] Keep User Authentication nearby due to authentication **
+  - [ ] Extend Default User Object Model?
+- [ ] Joke View Page
+  - [ ] Show Joke / User that created Joke / Stole / Joke Stealing***
+  - [ ] Create Function / Procedure / Package for Joke Statistics / Reviews / Review Statistics
+- [ ] Create Joke Page
+- [ ] Create Review Page
+- [ ] About Us Page - Static Page
+
+### Technical Requirements (What we need to do for an A+)
+- [ ] Sql Queries - select, update, insert - demonstrate connection between Object Relational Map and the Backend **(10 points)**
+- [ ] Program Design / Flow Charts / Create Basic PL/SQL Block **(10 points)**
+  - [x] Entity Relationship Diagram (Angie)
+  - [ ] Use Case Diagram / Class Diagram
+- [ ] Altering Table Structures / Cursors **(10 points)**
+  - [ ] Search Function can Return Cursor(s)
+  - [ ] Search Results will be displayed to the User in the GUI
+- [ ] Procedures / Functions (at least one of each) **(24 points)**
+  - [ ] Ins / Outs / Returns - need to infer this based on class diagram
+  - [ ] Stored Procedures / Functions - return all the reviews for a joke
+- [ ] Packages **(12 points)**
+  - [ ] Search Package? - can use overloading to allow for different types of search
+  - [ ] Joke Statistics?  - can bundle multiple functions / procedures into a package that will return Joke Stats and Review Information
+- [ ] Program Unit Dependencies **(12 points)**
+  - [ ] Functions / Procedures
+  - [ ] Views / Tables
+- [ ] Database Triggers **(12 points)**
+  - [ ] Might be convenient to aggregate joke statistics
+  - [ ] Convenient to aggregate user statistics
+
+## Project Installation Instructions
+
+### Clone Project to Your Local Machine
+Windows Instructions (Linux and Apple may be Similar)
+1. Follow instructions above for Setting Up Anaconda / Python / Django Environment with Atom IDE.  If you prefer another IDE you may use it.
+2. Install [Oracle XE 18c](https://download.oracle.com/otn/nt/oracle18c/180000/OracleXE184_Win64.zip) and configure your database to accept a connection like the one described in settings.py (create a connection for 'system' with password 'admin')
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'xe',
+        'USER': 'system',
+        'PASSWORD': 'admin',
+        'HOST': '',
+        'PORT': '1521',
+    }
+}
+```
+3. Install cx_Oracle Driver using python command:  ```python -m pip install cx_Oracle --upgrade```
+4.
+
 ### Setup Anaconda / Django / Atom
 Windows Instructions (Linux and Apple may be similar).
 1. [Install Anaconda](https://www.anaconda.com/distribution/), which is a set of tools that comes with Python distributions.  Optionally, you can install Python, but keep in mind that the commands below for creating your first project explicitly use 'conda' rather than the equivalent python or django commands.  To make sure that you have correctly installed Anaconda go to the Command Prompt or Terminal and type:  `conda info --all` which should spit out a number of details about your configuration environment.
