@@ -8,9 +8,10 @@ from .models import Jokester
 # Create your views here.
 #@login_required
 
-def index(request):
-    return HttpResponse("<h1>Under construction.</h1>")
-    #template_name = 'humorously/index.html'
+class IndexView(generic.TemplateView):
+    template_name = "index.html"
+    def get_queryset(self):
+        return
 class JokesterView(generic.ListView):
     template_name = "jokesters.html"
     context_object_name = 'latest_jokester_list'
