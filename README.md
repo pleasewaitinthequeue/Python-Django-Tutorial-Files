@@ -108,7 +108,7 @@ Django is a **Model, View, Template (MVT)** framework.
 [The Django 8 Hour Course](https://www.youtube.com/watch?v=JT80XhYJdBw&t) goes through the tutorial at a high level, but can be difficult to follow.  Make sure you have both resources open if you choose to work through the video.
 
 ### Migrating to Oracle XE
-In order to migrate, you must upgrade to version 12+ of the XE database.  XE is Oracle's open source tool which can be downloaded free from its website. The version that was used can be downloaded [here](https://download.oracle.com/otn/nt/oracle18c/180000/OracleXE184_Win64.zip) for Windows.  Note that you will need to unzip these files prior to being able to install Oracle XE.  Oracle Requires acceptance of the license agreement, and you may have to create an Oracle Account in order to signin and begin the download.  You also need to install a driver so that python can talk directly to Oracle.  In the terminal type:
+In order to migrate, you must upgrade to version 12+ of the XE database.  XE is Oracle's open source tool which can be downloaded free from its website. The version that was used can be downloaded [here](https://www.oracle.com/database/technologies/xe-downloads.html) for Windows.  Note that you will need to unzip these files prior to being able to install Oracle XE.  Oracle Requires acceptance of the license agreement, and you may have to create an Oracle Account in order to signin and begin the download.  You also need to install a driver so that python can talk directly to Oracle.  In the terminal type:
 ```
 python -m pip install cx_Oracle --upgrade
 ```
