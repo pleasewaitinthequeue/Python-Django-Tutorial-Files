@@ -1,14 +1,5 @@
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'humorously/style.css' %}">
-<ul class="banner">
-  <li class="banner-item">
-    <a href="{% url 'humorously:index' %}">Index</a>
-  </li>
-  <li class="banner-item">
-    <a href="{% url 'humorously:jokesters'%}">Jokesters</a>
-  </li>
-</ul>
+{% extends 'base.html' %}
+{% block body %}
 {% if latest_jokester_list %}
   <h1>The Jokester List</h1>
     <ul>
@@ -19,3 +10,4 @@
 {% else %}
     <p>No jokesters are available.</p>
 {% endif %}
+{% endblock %}
