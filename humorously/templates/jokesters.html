@@ -1,6 +1,11 @@
-{% load static %}
+{% extends "test.html" %}
+{% load staticfiles %}
 
+{% block title% }The Jokester List{% endblock %}
 <link rel="stylesheet" type="text/css" href="{% static 'humorously/style.css' %}">
+
+{% block content %}
+
 <ul class="banner">
   <li class="banner-item">
     <a href="{% url 'humorously:index' %}">Index</a>
@@ -19,3 +24,5 @@
 {% else %}
     <p>No jokesters are available.</p>
 {% endif %}
+
+{% endblock %}
