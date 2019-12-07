@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Humorous.ly</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'humorously/style.css' %}">
+</head>
+<body>
+  <nav>
+    <ul class="banner">
+      <li class="banner-item">
+        <a href="{% url 'humorously:index' %}">Index</a>
+      </li>
+      <li class="banner-item">
+        <a href="{% url 'humorously:jokesters' %}">Jokesters</a>
+      </li>
+    </ul>
+  </nav>
+
+  {% block body %}
+  {% endblock %}
+  <footer>
+
+  </footer>
+</body>
+</html>
