@@ -64,6 +64,8 @@ DATABASES = {
 3. Install cx_Oracle Driver using python command:  ```python -m pip install cx_Oracle --upgrade```
 4. If you do not have [Git Command Line interface](https://git-scm.com/downloads), you may need to install it.  To check type in ```git --version``` on your terminal or command prompt - if your system spits out a version number, you have already installed it.
 1. You can now clone the project by switching to the directory in which you want to clone the project to using ```cd directoryname``` and then typing ```git clone https://github.iu.edu/jomalair/Python-Django-Tutorial-Files.git```.
+2. If this is your first time setting up the django project you may have to run ```python manage.py makemigrations``` followed by ```python manage.py migrate --fake-initial``` which instructs the the interpreter to ignore later migration files.  Migration files instruct the system to make changes to your database.
+3. Keep in mind that if you're connecting to the database the first time you will also need to use the ```python manage.py createsuperuser``` command to create any usernames and passwords which you might need to login - the framework does not include any data in the database, it simply sets up a blank one.  
 2. If you have installed all the necessary dependencies, then once you are done, you should be able to type ```python manage.py runserver``` and see a screen similar to this:
 
 ```
