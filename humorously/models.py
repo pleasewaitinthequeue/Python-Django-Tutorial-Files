@@ -162,3 +162,21 @@ setid Number(10) (FK)
 actname varchar(40)
 actdescription varchar(255) (max length or something like that)
 """
+
+class Club(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='+',
+    )
+    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=150)
+    description = models.TextField(max_length=1024)
+    address1 = models.CharField(max_length=100)
+    address2 = models.CharField(max_length=100)
+    city = models.CharField(max_length=150)
+    state = models.CharField(max_length=150)
+    zipcode = models.CharField(max_length=25)
+    country = models.CharField(max_length=150)
+    def __str__(self):
+        return self.name

@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+{% block body %}
+<div class="box">
+{% if random_jokester %}
+  <h2>Random Jokester</h2>
+  <h3>{{ random_jokester }}</h3>
+  <h4>{{ random_jokester.user.email }}</h4>
+  <h4>{{ random_jokester.user.username }}</h4>
+{% else %}
+    <p>No jokesters are available.</p>
+{% endif %}
+</div>
+{% endblock %}

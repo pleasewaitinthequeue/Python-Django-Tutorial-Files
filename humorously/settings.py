@@ -1,2 +1,2 @@
-login_redirect_url = "/"
-logout_redirect_url = "/"
+login_redirect_url = "/redirect"
+logout_redirect_url = "/redirect"

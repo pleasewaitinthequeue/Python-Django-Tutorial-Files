@@ -7,9 +7,6 @@ from .models import Jokester
 
 class JokesterAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['first_name']}),
-        (None, {'fields': ['last_name']}),
-        (None, {'fields': ['email_address']}),
         (None, {'fields': ['city_residence']}),
         (None, {'fields': ['state']}),
         (None, {'fields': ['zipcode']}),

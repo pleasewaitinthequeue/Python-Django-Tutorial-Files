@@ -20,11 +20,24 @@ h1 {
   text-align: center;
   width: 200px;
   height: 50px;
-  color:#000000;
+  color: #888888;
   text-decoration: none;
 }
 
 .banner-item a:hover{
   background-color: #555555;
   color: white;
+}
+
+.box {
+  height:250px;
+  width:250px;
+  border:solid 1px #555555;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-flex-start;
+  flex-direction: row;
 }

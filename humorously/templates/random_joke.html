@@ -1,0 +1,12 @@
+{% load staticfiles %}
+
+{% block body %}
+<div class="box">
+{% if random_joke %}
+  <h2>Random Joke</h2>
+  <h3>{{ random_joke }}</h3>
+{% else %}
+    <p>No jokes are available.</p>
+{% endif %}
+</div>
+{% endblock %}
