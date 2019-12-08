@@ -20,7 +20,7 @@ class Jokester(models.Model):
     zipcode = models.CharField(max_length=25)
     country = models.CharField(max_length=150)
     created = models.DateTimeField(
-        default=timezone.datetime.now()
+        auto_now_add=True
     )
     def __str__(self):
         return self.last_name + ", " + self.first_name
