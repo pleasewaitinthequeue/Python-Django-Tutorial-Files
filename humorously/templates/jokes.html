@@ -1,9 +1,18 @@
-{% extends "test.html" %}
-{% load static %}
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}The Joke List{% endblock %}
 
+{% block body %}
 
-<h1>Humorous.ly</h1>
+{% if latest_joke_list %}
+  <h1>The Joke List</h1>
+    <ul>
+    {% for joke in latest_joke_list %}
+        <li>{{ joke }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jokes are available.</p>
+{% endif %}
 
-<h2>Jokes</h2>
-
-<p>Stuff</p>
+{% endblock %}

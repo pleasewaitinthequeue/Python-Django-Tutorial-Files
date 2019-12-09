@@ -34,10 +34,15 @@ class IndexView(generic.TemplateView):
 #@login_required todo / make views require authentication
 class JokesterView(generic.ListView):
     template_name = "jokesters.html"
-    context_object_name = 'latest_jokester_list'
-    """
-        return the top 10 jokesters, with a created date == today
-    """
+    context_object_name = "latest_jokester_list"
     def get_queryset(self):
-        return Jokester.objects.filter(
-            created__lte=timezone.now()).order_by('-created')[:10]
+        print(Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10])
+        return Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10]
+
+class JokeListView(generic.ListView):
+    print('JokeListView()')
+    template_name = "jokes.html"
+    conext_object_name = "latest_joke_list"
+    def get_queryset(self):
+        print(Joke.objects.order_by('-created')[:10])
+        return Joke.objects.order_by('-created')[:10]

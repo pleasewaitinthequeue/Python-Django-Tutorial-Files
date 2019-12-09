@@ -56,12 +56,14 @@ state char(2) (maybe make the limit hold the whole state name?)
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length=255)
+    description = models.TextField(max_length=1024)
     created = models.DateTimeField(
         auto_now_add=True #had problems with datetimes evaluating to a specific date and time on the migration side.  auto_now_add is a bit that django has included to tell the database we want a default timestamp
     )
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name_plural = "Categories"
 """
 category.py
 ============================
@@ -86,6 +88,8 @@ class Joke(models.Model):
     )
     title = models.CharField(max_length=50)
     text = models.TextField(max_length=1024)
+    def __str__(self):
+        return self.title
 
 """
 joke.py
@@ -173,10 +177,12 @@ class Club(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField(max_length=1024)
     address1 = models.CharField(max_length=100)
-    address2 = models.CharField(max_length=100)
+    address2 = models.CharField(max_length=100, blank=True, default='')
     city = models.CharField(max_length=150)
     state = models.CharField(max_length=150)
     zipcode = models.CharField(max_length=25)
     country = models.CharField(max_length=150)
     def __str__(self):
         return self.name
+    def full_address(self):
+        return self.address1 + ' | ' + self.address2 + ' | ' + self.city + ', ' + self.state + ' ' + self.zipcode + ' | ' + self.country
