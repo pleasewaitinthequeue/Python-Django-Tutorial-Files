@@ -8,7 +8,7 @@ urlpatterns = [
     path('about', views.AboutView.as_view(), name='about'),
     path('profile', views.ProfileView.as_view(), name='profile'),
     path('jokesters', views.JokesterView.as_view(), name='jokesters'),
-    path('<int:pk>/', views.JokesterDetail.as_view(), name='jokesterdetail'),
+    path('jokester/<int:pk>/', views.JokesterDetail.as_view(), name='jokesterdetail'),
     path('jokes', views.JokeListView.as_view(), name='jokes'),
-    path('<int:pk>/', views.JokeDetail.as_view(), name='jokedetail'),
+    path('joke/<int:pk>/', views.JokeDetail.as_view(), name='jokedetail'),
 ]
