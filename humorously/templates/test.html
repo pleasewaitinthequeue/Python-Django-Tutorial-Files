@@ -20,11 +20,13 @@
           <li class="banner-item">
             <a href="{% url 'humorously:jokes' %}">Jokes</a>
           </li>
-          {% comment %}
           <li class="banner-item">
             <a href="{% url 'humorously:about' %}">About</a>
           </li>
-
+          <li class="banner-item">
+            <a href="{% url 'humorously:profile' %}">Profile</a>
+          </li>
+          {% comment %}
           <li class="banner-item">
             <a href="{% url 'humorously:search' %}">Search</a>
           </li>
@@ -33,9 +35,6 @@
           </li>
           <li class="banner-item">
             <a href="{% url 'humorously:createreview' %}">Create Review</a>
-          </li>
-          <li class="banner-item">
-            <a href="{% url 'humorously:profile' %}">User Profile</a>
           </li>
           {% endcomment %}
         </ul>

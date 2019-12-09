@@ -31,6 +31,19 @@ class IndexView(generic.TemplateView):
         context['popular_jokester'] = Jokester.objects.all().first()
         return context
 
+class AboutView(generic.TemplateView):
+    template_name = "about.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class ProfileView(generic.TemplateView):
+    template_name = "profile.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_user'] = self.request.user;
+        return context
+
 #@login_required todo / make views require authentication
 class JokesterView(generic.ListView):
     template_name = "jokesters.html"
@@ -39,10 +52,21 @@ class JokesterView(generic.ListView):
         print(Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10])
         return Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10]
 
+class JokesterDetail(generic.DetailView):
+    model = Jokester
+    template_name = "jokester.html"
+    def get_queryset(self):
+        return Jokester.objects.all()
+
 class JokeListView(generic.ListView):
-    print('JokeListView()')
     template_name = "jokes.html"
-    conext_object_name = "latest_joke_list"
+    context_object_name = "latest_joke_list"
     def get_queryset(self):
         print(Joke.objects.order_by('-created')[:10])
         return Joke.objects.order_by('-created')[:10]
+
+class JokeDetail(generic.DetailView):
+    model = Joke
+    template_name = "joke.html"
+    def get_queryset(self):
+        return Joke.objects.all()

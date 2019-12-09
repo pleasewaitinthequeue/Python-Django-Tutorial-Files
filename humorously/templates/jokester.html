@@ -1,0 +1,16 @@
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}The Jokester{% endblock %}
+
+{% block body %}
+
+{% if jokester %}
+    <h2>{{ jokester }}</h2>
+    <p>{{ jokester.user.email }}</p>
+    <p>{{ jokester.city_residence }}, {{ jokester.state}} {{ jokester.country }}</p>
+
+{% else %}
+    <p>I couldn't find the jokester you're looking for.</p>
+{% endif %}
+
+{% endblock %}

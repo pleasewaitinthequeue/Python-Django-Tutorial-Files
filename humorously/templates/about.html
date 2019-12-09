@@ -1,9 +1,7 @@
 {% extends "test.html" %}
 {% load static %}
-
-
+{% block body %}
 <h1>Humorous.ly</h1>
-
 <h2>Welcome to Humorous.ly!</h2>
-
-<p>Stuff</p>
+<p>{% lorem 3 p %}</p>
+{% endblock %}

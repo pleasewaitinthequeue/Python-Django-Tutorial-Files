@@ -8,7 +8,7 @@
   <h1>The Jokester List</h1>
     <ul>
     {% for jokester in latest_jokester_list %}
-        <li>{{ jokester }}</li>
+        <li><a href="{% url 'humorously:jokesterdetail' jokester.id %}">{{ jokester }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

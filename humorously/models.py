@@ -25,6 +25,7 @@ class Jokester(models.Model):
     state = models.CharField(max_length=150)
     zipcode = models.CharField(max_length=25)
     country = models.CharField(max_length=150)
+    photo_url = models.CharField(max_length=255, blank=True, default='')
     created = models.DateTimeField(
         auto_now_add=True
     )

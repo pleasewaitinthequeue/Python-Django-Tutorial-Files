@@ -31,8 +31,10 @@ h1 {
 
 .box {
   height:250px;
-  width:250px;
+  width:350px;
   border:solid 1px #555555;
+  margin:25px;
+  padding: 10px;
 }
 
 .container {
@@ -40,4 +42,10 @@ h1 {
   justify-content: flex-start;
   align-items: flex-flex-start;
   flex-direction: row;
+}
+
+.profile-image {
+  height:250px;
+  width:250px;
+  
 }

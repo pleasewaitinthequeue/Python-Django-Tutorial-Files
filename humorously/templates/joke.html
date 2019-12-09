@@ -1,0 +1,14 @@
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}The Joke{% endblock %}
+
+{% block body %}
+
+{% if joke %}
+    <h2>{{ joke }}</h2>
+    <p>{{ joke.text }}</p>
+{% else %}
+    <p>I couldn't find the joke you're looking for.</p>
+{% endif %}
+
+{% endblock %}
