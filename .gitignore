@@ -5,6 +5,7 @@
 *.log
 *.pot
 *.pyc
+*.cpython-37.pyc
 __pycache__/
 polls/__pycache__/
 humorously/__pycache__/
