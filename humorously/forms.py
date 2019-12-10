@@ -1,8 +1,16 @@
 from django import forms
-from .models import Joke, Category
+from .models import Joke, Category, Jokester
 
-class JokeForm(forms.Form):
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), to_field_name="name")
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        proxy = True
+        model = Jokester
+        fields = ('city_residence','state','zipcode','country')
+
+class JokeForm(forms.ModelForm):
+    class Meta:
+        model = Joke
+        fields = ('category','title','text')
 
 """
 class Joke(models.Model):

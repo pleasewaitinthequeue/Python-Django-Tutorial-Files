@@ -6,9 +6,10 @@
 
 {% if latest_joke_list %}
   <h1>The Joke List</h1>
+    <a href="/humorously/joke/add">Add a Joke</a>
     <ul>
     {% for joke in latest_joke_list %}
-        <li><a href="{% url 'humorously:jokedetail' joke.id %}">{{ joke }}</a></li>
+        <li><a href="{% url 'humorously:jokedetail' joke.id %}">{{ joke|title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

@@ -4,7 +4,7 @@
 <div class="box">
 {% if random_jokester %}
   <h2>Random Jokester</h2>
-  <h3>{{ random_jokester }}</h3>
+  <h3>{{ random_jokester|title }}</h3>
   <h4>{{ random_jokester.user.email }}</h4>
   <h4>{{ random_jokester.user.username }}</h4>
 {% else %}

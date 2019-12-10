@@ -4,7 +4,8 @@
 <div class="box">
 {% if random_joke %}
   <h2>Random Joke</h2>
-  <h3>{{ random_joke }}</h3>
+  <h3><a href="/humorously/joke/{{random_joke.id}}/detail">{{ random_joke|title }}</a></h3>
+  <p>{{ random_joke.text }}</p>
 {% else %}
     <p>No jokes are available.</p>
 {% endif %}

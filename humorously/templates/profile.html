@@ -11,6 +11,7 @@
   <p>City of Residence: {{current_user.jokester.city_residence}}</p>
   <p>State:  {{current_user.jokester.state}}  Zip: {{current_user.jokester.zipcode}}</p>
   <p>Country:  {{current_user.jokester.country}}</p>
-  <img class="profile-image" src="{{current_user.jokester.photo_url}}"/>
-
+  <img id="{{ current_user.id }}" class="profile-image" src="{{current_user.jokester.photo_url}}"/>
+  <br/>
+  <a href="/humorously/profile/{{ current_user.id }}/edit">Edit Profile</a>
 {% endblock %}
