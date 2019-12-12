@@ -1,10 +1,13 @@
 {% extends 'test.html' %}
 
 {% block body %}
-  <h2>Joke Edit Form</h2>
-  <form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save-btn">Save</button>
-  </form>
+<div class="container">
+  <div>
+    <h2>Joke Edit Form</h2>
+    <form method="POST" class="post-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="save-btn">Save</button>
+    </form>
+  </div>
 {% endblock %}

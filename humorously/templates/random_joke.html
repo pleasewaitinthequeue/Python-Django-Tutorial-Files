@@ -1,11 +1,11 @@
 {% load staticfiles %}
 
 {% block body %}
-<div class="box">
+<div class="box index-block popular-joke">
 {% if random_joke %}
   <h2>Random Joke</h2>
   <h3><a href="/humorously/joke/{{random_joke.id}}/detail">{{ random_joke|title }}</a></h3>
-  <p>{{ random_joke.text }}</p>
+  <div class="ellipsis">{{ random_joke.text }}</div>
 {% else %}
     <p>No jokes are available.</p>
 {% endif %}

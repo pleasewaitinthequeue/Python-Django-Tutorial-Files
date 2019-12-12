@@ -1,10 +1,14 @@
 {% extends 'test.html' %}
 
 {% block body %}
-  <h2>Profile Edit Form</h2>
-  <form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save-btn">Save</button>
-  </form>
+  <div class="container">
+    <div>
+      <h2>Profile Edit Form</h2>
+      <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+    </div>
+  </div>
 {% endblock %}

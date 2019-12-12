@@ -21,6 +21,7 @@ class IndexView(LoginRequiredMixin, generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['random_jokester'] = Jokester.objects.order_by("?").first()
+        print(Jokester.objects.order_by("?").query)
         context['random_joke'] = Joke.objects.order_by("?").first()
         context['random_club'] = Club.objects.order_by("?").first()
         context['popular_jokester'] = Jokester.objects.all().first()
@@ -55,7 +56,7 @@ class JokesterView(LoginRequiredMixin, generic.ListView):
     template_name = "jokesters.html"
     context_object_name = "latest_jokester_list"
     def get_queryset(self):
-        print(Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10])
+        print(Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10].query)
         return Jokester.objects.filter(created__lte=timezone.now()).order_by('-created')[:10]
 
 class JokesterDetail(LoginRequiredMixin, generic.DetailView):
@@ -84,7 +85,7 @@ def add_new_joke(request):
             joke = form.save(commit=False)
             joke.user = request.user
             joke.save()
-            return redirect('/humorously/joke/%s' % (joke.id), pk=joke.id)
+            return redirect('/humorously/joke/%s/detail' % (joke.id), pk=joke.id)
     else:
         form = JokeForm()
         return render(request, 'joke_edit.html', {'form': form})
@@ -97,7 +98,7 @@ def edit_joke(request, pk):
             joke = form.save(commit=False)
             joke.user = request.user
             joke.save()
-            return redirect('/humorously/joke/%s' % (joke.id), pk=joke.id)
+            return redirect('/humorously/joke/%s/detail' % (joke.id), pk=joke.id)
     else:
         form = JokeForm(instance=joke)
     return render(request, 'joke_edit.html', {'form': form})

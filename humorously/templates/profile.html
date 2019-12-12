@@ -2,16 +2,18 @@
 {% load static %}
 
 {% block body %}
-<h1>Humorous.ly</h1>
-
-<h2>User Profile</h2>
-  <p>Username:  {{current_user}}</p>
-  <p>Last, First:  {{current_user.last_name}}, {{current_user.first_name}}</p>
-  <p>Email:  {{current_user.email}}</p>
-  <p>City of Residence: {{current_user.jokester.city_residence}}</p>
-  <p>State:  {{current_user.jokester.state}}  Zip: {{current_user.jokester.zipcode}}</p>
-  <p>Country:  {{current_user.jokester.country}}</p>
-  <img id="{{ current_user.id }}" class="profile-image" src="{{current_user.jokester.photo_url}}"/>
-  <br/>
-  <a href="/humorously/profile/{{ current_user.id }}/edit">Edit Profile</a>
+<div class="container">
+  <div>
+    <h2>User Profile</h2>
+    <p>Username:  {{current_user}}</p>
+    <p>Last, First:  {{current_user.last_name}}, {{current_user.first_name}}</p>
+    <p>Email:  {{current_user.email}}</p>
+    <p>City of Residence: {{current_user.jokester.city_residence}}</p>
+    <p>State:  {{current_user.jokester.state}}  Zip: {{current_user.jokester.zipcode}}</p>
+    <p>Country:  {{current_user.jokester.country}}</p>
+    <img id="{{ current_user.id }}" class="profile-image" src="{{current_user.jokester.photo_url}}"/>
+    <br/>
+    <a href="/humorously/profile/{{ current_user.id }}/edit">Edit Profile</a>
+  </div>
+</div>
 {% endblock %}

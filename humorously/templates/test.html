@@ -6,13 +6,14 @@
         <title>Humorous.ly</title>
         <!-- Base CSS -->
         <link rel="stylesheet" type="text/css" href="{% static 'humorously/style.css' %}">
+        <link href="../static/icons/favicon.ico" type="image/x-icon" rel="icon" />
     </head>
 
     <body>
       <nav>
         <ul class="banner">
-          <li class="banner-item">
-            <a href="{% url 'humorously:index' %}">Home</a>
+          <li class="brand-logo">
+            <a href="{% url 'humorously:index' %}" style="outline-width: 0px !important; user-select: auto !important;">Humorous.ly</a>
           </li>
           <li class="banner-item">
             <a href="{% url 'humorously:jokesters' %}">Jokesters</a>
@@ -26,12 +27,12 @@
           <li class="banner-item">
             <a href="{% url 'humorously:profile' %}">Profile</a>
           </li>
+          <li class="banner-item">
+            <a href="{% url 'humorously:jokeadd' %}">Create Joke</a>
+          </li>
           {% comment %}
           <li class="banner-item">
             <a href="{% url 'humorously:search' %}">Search</a>
-          </li>
-          <li class="banner-item">
-            <a href="{% url 'humorously:createjoke' %}">Create Joke</a>
           </li>
           <li class="banner-item">
             <a href="{% url 'humorously:createreview' %}">Create Review</a>
@@ -43,6 +44,28 @@
       {% block body %}
 
       {% endblock %}
+
+    <footer class="footer">
+      <ul>
+          <li class="banner-item">
+              <a href="{% url 'humorously:about' %}">About</a>
+          </li>
+          <li class="banner-item">
+              <a href="{% url 'humorously:jokes' %}">Jokes</a>
+          </li>
+          <li class="banner-item">
+              <a href="{% url 'humorously:profile' %}">User Profile</a>
+          </li>
+          <li class="banner-item">
+              <a href="search.html">Search</a>
+          </li>
+          <div>
+            <p>&copy; Lairson, Miller, & Cooper Ltd. 2019 - All Rights Reserved</p>
+          </div>
+      </ul>
+
+    </footer>
+
     </body>
 
 </html>

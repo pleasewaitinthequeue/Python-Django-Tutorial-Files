@@ -3,16 +3,18 @@
 {% block title %}The Jokester List{% endblock %}
 
 {% block body %}
-
+<div class="container">
 {% if latest_jokester_list %}
+  <div>
   <h1>The Jokester List</h1>
     <ul>
     {% for jokester in latest_jokester_list %}
         <li><a href="{% url 'humorously:jokesterdetail' jokester.id %}">{{ jokester }}</a></li>
     {% endfor %}
     </ul>
+  </div>
 {% else %}
     <p>No jokesters are available.</p>
 {% endif %}
-
+</div>
 {% endblock %}

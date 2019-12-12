@@ -3,17 +3,19 @@
 {% block title %}The Joke List{% endblock %}
 
 {% block body %}
-
+<div class="container">
 {% if latest_joke_list %}
-  <h1>The Joke List</h1>
+  <div>
+  <h2>The Joke List</h2>
     <a href="/humorously/joke/add">Add a Joke</a>
     <ul>
     {% for joke in latest_joke_list %}
         <li><a href="{% url 'humorously:jokedetail' joke.id %}">{{ joke|title }}</a></li>
     {% endfor %}
     </ul>
+  </div>
 {% else %}
     <p>No jokes are available.</p>
 {% endif %}
-
+</div>
 {% endblock %}

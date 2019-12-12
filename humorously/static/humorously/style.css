@@ -1,51 +1,154 @@
-h1 {
-  color:navy
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #fffaf0;
 }
-
+h1 {
+  text-align: center;
+  color: #000080;
+  margin: 0;
+}
+.main {
+  margin-bottom: 100px;
+}
 .banner{
-  background-color: #333333;
+  background-color: #fffc5c !important;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 30px;
 }
 
-.banner-item{
-  float: left;
+.banner-item {
+  float: right !important;
+  padding: 0 15px;
+  font-size: 14.5px;
 }
 
-.banner-item a{
+.banner-item a {
   display: block;
   text-align: center;
-  width: 200px;
+  line-height: 48px;
   height: 50px;
-  color: #888888;
+  color: #000;
   text-decoration: none;
 }
 
-.banner-item a:hover{
-  background-color: #555555;
-  color: white;
+.banner-item a:hover {
+  background-color: #c7c548;
+  color: #fff;
 }
 
 .box {
   height:250px;
   width:350px;
-  border:solid 1px #555555;
   margin:25px;
   padding: 10px;
 }
 
+.brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center;
+  padding: 0;
+}
+.brand-logo :any-link {
+  text-decoration: none;
+  color: #000;
+}
+@media screen and (min-width: 200px) {
+  .brand-logo {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 500px) {
+  .brand-logo {
+    width: 40%;
+    font-size: 0;
+  }
+}
+@media screen and (min-width: 994px) {
+  .brand-logo {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 994px) and (max-width: 1230px) {
+  .brand-logo {
+    width: 20%;
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
 .container {
+  width: 80%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-flex-start;
   flex-direction: row;
+  padding-left: 50px;
+}
+
+.container-banner {
+  width: 80%
+  align: center;
+  margin-left: 50px;
 }
 
 .profile-image {
   height:250px;
   width:250px;
-  
+
+}
+
+footer {
+  text-align: center;
+  background-color: #fffc5c;
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  bottom: 0px;
+}
+footer ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+footer ul li {
+  margin-right: 15px;
+}
+footer ul a {
+  text-decoration: none !important;
+}
+
+.index-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+.index-block {
+  border-style: solid;
+  width: 400px;
+  height: 200px;
+  color: #000080;
+}
+
+.index-block h3 {
+  text-align: center;
+}
+.about p {
+  text-align: center;
 }

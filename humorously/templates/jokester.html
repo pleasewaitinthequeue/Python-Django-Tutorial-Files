@@ -3,14 +3,15 @@
 {% block title %}The Jokester{% endblock %}
 
 {% block body %}
-
+<div class="container">
 {% if jokester %}
+  <div>
     <h2>{{ jokester }}</h2>
     <p>{{ jokester.user.email }}</p>
     <p>{{ jokester.city_residence }}, {{ jokester.state}} {{ jokester.country }}</p>
-
+  </div>
 {% else %}
     <p>I couldn't find the jokester you're looking for.</p>
 {% endif %}
-
+</div>
 {% endblock %}
