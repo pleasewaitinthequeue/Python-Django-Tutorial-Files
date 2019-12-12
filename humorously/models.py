@@ -108,11 +108,6 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         related_name='+',
     )
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.CASCADE,
-        related_name='+',
-    )
     joke = models.ForeignKey(
         Joke,
         on_delete=models.CASCADE,
@@ -121,6 +116,8 @@ class Review(models.Model):
     score = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=50)
     text = models.TextField(max_length=1024)
+    def __str__(self):
+        return self.title
 """
 review.py
 =============================

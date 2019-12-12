@@ -25,6 +25,10 @@ class IndexView(LoginRequiredMixin, generic.TemplateView):
         context['random_joke'] = Joke.objects.order_by("?").first()
         context['random_club'] = Club.objects.order_by("?").first()
         context['popular_jokester'] = Jokester.objects.all().first()
+        print(Jokester.objects.order_by("?").query)
+        print(Joke.objects.order_by("?").query)
+        print(Club.objects.order_by("?").query)
+        print(Jokester.objects.all().query)
         return context
 
 class AboutView(LoginRequiredMixin, generic.TemplateView):
@@ -38,6 +42,7 @@ class ProfileView(LoginRequiredMixin, generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['current_user'] = self.request.user;
+        print(self.request.user)
         return context
 
 def edit_profile(request, pk):
@@ -49,6 +54,7 @@ def edit_profile(request, pk):
             return redirect('/humorously/profile', pk=profile.id)
     else:
         form = ProfileForm(instance=profile)
+    print(render(request, 'profile_edit.html', {'form': form }))
     return render(request, 'profile_edit.html', {'form': form })
 
 #@login_required todo / make views require authentication
@@ -63,19 +69,21 @@ class JokesterDetail(LoginRequiredMixin, generic.DetailView):
     model = Jokester
     template_name = "jokester.html"
     def get_queryset(self):
+        print(Jokester.objects.all().query)
         return Jokester.objects.all()
 
 class JokeListView(LoginRequiredMixin, generic.ListView):
     template_name = "jokes.html"
     context_object_name = "latest_joke_list"
     def get_queryset(self):
-        print(Joke.objects.order_by('-created')[:10])
-        return Joke.objects.order_by('-created')[:10]
+        print(Joke.objects.order_by('?')[:10].query)
+        return Joke.objects.order_by('?')[:10]
 
 class JokeDetail(LoginRequiredMixin, generic.DetailView):
     model = Joke
     template_name = "joke.html"
     def get_queryset(self):
+        print(Joke.objects.all().query)
         return Joke.objects.all()
 
 def add_new_joke(request):
