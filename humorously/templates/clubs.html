@@ -1,0 +1,21 @@
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}The Jokester List{% endblock %}
+
+{% block body %}
+<div class="container">
+{% if latest_club_list %}
+  <div>
+  <h1>The Club List</h1>
+    <a href="/humorously/club/add">Add a Club</a>
+    <ul>
+    {% for club in latest_club_list %}
+        <li><a href="/humorously/club/{{club.id}}/detail">{{ club }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+{% else %}
+    <p>No clubs are available.</p>
+{% endif %}
+</div>
+{% endblock %}

@@ -10,7 +10,7 @@
     <a href="/humorously/joke/add">Add a Joke</a>
     <ul>
     {% for joke in latest_joke_list %}
-        <li><a href="{% url 'humorously:jokedetail' joke.id %}">{{ joke|title }}</a></li>
+        <li><a href="{% url 'humorously:jokesummary' joke.id %}">{{ joke|title }}</a></li>
     {% endfor %}
     </ul>
   </div>

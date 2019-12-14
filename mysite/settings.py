@@ -133,5 +133,23 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+# this is a file based backend, swapping with an email backend
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+# Default Gmail SMTP Settings
+# Gmail SMTP server address: smtp.gmail.com
+# Gmail SMTP username: Your full Gmail address (e.g. yourusername@gmail.com)
+# Gmail SMTP password: Your Gmail password
+# Gmail SMTP port (TLS): 587
+# Gmail SMTP port (SSL): 465
+# Gmail SMTP TLS/SSL required: yes
+
+# https://medium.com/@_christopher/how-to-send-emails-with-python-django-through-google-smtp-server-for-free-22ea6ea0fb8e
+# this is an smtp backend
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'none.shall.pass.2009@gmail.com'
+# EMAIL_HOST_PASSWORD = 'jonb1984_NSP'

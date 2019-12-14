@@ -14,4 +14,9 @@ urlpatterns = [
     path('joke/<int:pk>/detail', views.JokeDetail.as_view(), name='jokedetail'),
     path('joke/add', views.add_new_joke, name='jokeadd'),
     path('joke/<int:pk>/edit', views.edit_joke, name='jokeedit'),
+    path('joke/<int:pk>/summary', views.joke_summary, name='jokesummary'),
+    path('joke/<int:pk>/reviews/add', views.add_new_review, name='addnewreview'),
+    path('clubs', views.ClubsView.as_view(), name='clubs'),
+    path('club/<int:pk>/detail', views.ClubDetailView.as_view(), name='clubdetail'),
+    path('club/add', views.add_new_club, name='addclub'),
 ]

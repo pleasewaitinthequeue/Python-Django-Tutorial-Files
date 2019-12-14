@@ -1,5 +1,5 @@
 from django import forms
-from .models import Joke, Category, Jokester
+from .models import Joke, Category, Jokester, Review, Club
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -31,4 +31,56 @@ class Joke(models.Model):
     text = models.TextField(max_length=1024)
     def __str__(self):
         return self.title
+"""
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('title','score','text')
+
+
+"""
+class Review(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='+',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='+',
+    )
+    score = models.PositiveSmallIntegerField()
+    title = models.CharField(max_length=50)
+    text = models.TextField(max_length=1024)
+    def __str__(self):
+        return self.title
+"""
+
+class ClubForm(forms.ModelForm):
+    class Meta:
+        model = Club
+        fields = ('name','title','description','address1','address2','city','state','zipcode','country')
+
+"""
+class Club(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='+',
+    )
+    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=150)
+    description = models.TextField(max_length=1024)
+    address1 = models.CharField(max_length=100)
+    address2 = models.CharField(max_length=100, blank=True, default='')
+    city = models.CharField(max_length=150)
+    state = models.CharField(max_length=150)
+    zipcode = models.CharField(max_length=25)
+    country = models.CharField(max_length=150)
+    def __str__(self):
+        return self.name
+    def full_address(self):
+        return self.address1 + ' | ' + self.address2 + ' | ' + self.city + ', ' + self.state + ' ' + self.zipcode + ' | ' + self.country
 """

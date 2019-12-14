@@ -1,0 +1,24 @@
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}The Joke{% endblock %}
+
+{% block body %}
+<div class="container">
+{% if joke %}
+  <div>
+    <h2>{{ joke|title }}</h2>
+    <a href="/humorously/jokes">Back to Jokes</a> | <a class="btn btn-default" href="/humorously/joke/{{joke.id}}/edit">Edit this Joke</a> | <a href="/humorously/joke/{{joke.id}}/reviews/add">Review this Joke</a>
+    <p>{{ joke.text }}</p>
+    {% for review in reviews %}
+    <div>
+      <h4>{{review.title}}</h4>
+      <h5>Score:  {{review.score}} / 10</h5>
+      <div>{{review.text}}</div>
+    </div>
+    {% endfor %}
+  </div>
+{% else %}
+    <p>I couldn't find the joke you're looking for.</p>
+{% endif %}
+</div>
+{% endblock %}

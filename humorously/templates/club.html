@@ -1,0 +1,21 @@
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}The Joke{% endblock %}
+
+{% block body %}
+<div class="container">
+{% if club %}
+  <div>
+    <a href="/humorously/clubs">Back to Clubs</a>
+    <h2>{{ club|title }}</h2>
+    <h4>{{ club.description }}</h4>
+    <p>{{ club.address1 }}</p>
+    <p>{{ club.address2 }}</p>
+    <p>{{ club.city }}, {{ club.state }} {{ club.zipcode }}</p>
+    <p>{{ club.country }}</p>
+  </div>
+{% else %}
+    <p>I couldn't find the club you're looking for.</p>
+{% endif %}
+</div>
+{% endblock %}
