@@ -156,6 +156,7 @@ def add_new_club(request):
         return render(request, 'club_edit.html', {'form': form })
 
 class SearchJokesView(generic.ListView):
+    # https://wsvincent.com/django-search/
     model = Joke
     template_name = 'search_jokes.html'
     def get_queryset(self):
@@ -164,4 +165,5 @@ class SearchJokesView(generic.ListView):
         return joke_list
 
 class SearchView(generic.TemplateView):
+    # https://wsvincent.com/django-search/
     template_name = 'search.html'
