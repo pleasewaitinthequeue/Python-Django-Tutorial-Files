@@ -19,4 +19,6 @@ urlpatterns = [
     path('clubs', views.ClubsView.as_view(), name='clubs'),
     path('club/<int:pk>/detail', views.ClubDetailView.as_view(), name='clubdetail'),
     path('club/add', views.add_new_club, name='addclub'),
+    #path('', views.SearchView.as_view(), name='searchjokes'),
+    path('search/', views.SearchJokesView.as_view(), name='searchresults'),
 ]

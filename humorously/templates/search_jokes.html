@@ -1,0 +1,18 @@
+{% extends 'test.html' %}
+{% load staticfiles %}
+{% block title %}Search Jokes{% endblock %}
+
+{% block body %}
+  <h1>Search Jokes</h1>
+  {% if joke_list %}
+  <ul>
+    {% for joke in joke_list %}
+      <li>
+        <a href="{% url 'humorously:jokesummary' joke.id %}">{{ joke }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No Jokes found for that keyword</p>
+  {% endif %}
+{% endblock %}

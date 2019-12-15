@@ -16,6 +16,12 @@
             <a href="{% url 'humorously:index' %}" style="outline-width: 0px !important; user-select: auto !important;">Humorous.ly</a>
           </li>
           <li class="banner-item">
+            <a href="/accounts/logout">Sign Out</a>
+          </li>
+          <li class="banner-item">
+            <a href="{% url 'humorously:profile' %}">Profile</a>
+          </li>
+          <li class="banner-item">
             <a href="{% url 'humorously:jokesters' %}">Jokesters</a>
           </li>
           <li class="banner-item">
@@ -25,10 +31,10 @@
             <a href="{% url 'humorously:about' %}">About</a>
           </li>
           <li class="banner-item">
-            <a href="{% url 'humorously:profile' %}">Profile</a>
+            <a href="{% url 'humorously:jokeadd' %}">Create Joke</a>
           </li>
           <li class="banner-item">
-            <a href="{% url 'humorously:jokeadd' %}">Create Joke</a>
+            <a href="{% url 'humorously:clubs' %}">Clubs</a>
           </li>
           {% comment %}
           <li class="banner-item">

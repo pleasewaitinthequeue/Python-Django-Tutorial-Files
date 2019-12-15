@@ -11,6 +11,7 @@ from django.views import generic
 from django.utils import timezone
 from random import randint
 from django.views.generic.base import RedirectView
+from django.db.models import Q
 #from django.contrib.auth.decorators import login_required
 from .models import Jokester, Joke, Review, Category, Set, Act, Club
 from .forms import JokeForm, ProfileForm, ReviewForm, ClubForm
@@ -153,3 +154,14 @@ def add_new_club(request):
     else:
         form = ClubForm()
         return render(request, 'club_edit.html', {'form': form })
+
+class SearchJokesView(generic.ListView):
+    model = Joke
+    template_name = 'search_jokes.html'
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        joke_list = Joke.objects.filter( Q(title__icontains=query) | Q(text__icontains=query) )
+        return joke_list
+
+class SearchView(generic.TemplateView):
+    template_name = 'search.html'

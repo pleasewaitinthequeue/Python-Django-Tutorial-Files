@@ -154,3 +154,8 @@ footer ul a {
 .about p {
   text-align: center;
 }
+
+.search {
+  margin-top: 25px;
+  width: 80%;
+}

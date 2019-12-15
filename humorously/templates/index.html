@@ -3,9 +3,10 @@
 {% block body %}
 
 <div class="container-banner">
-<h2>Welcome to Humorous.ly</h2>
-<p>{% lorem 1 p %}</p>
+{% include "search.html" %}
 </div>
+
+
 
 <div class="container index-blocks">
     {% include "random_jokester.html" with random_jokester=random_jokester %}
