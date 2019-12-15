@@ -11,6 +11,7 @@ class JokesterAdmin(admin.ModelAdmin):
         (None, {'fields': ['state']}),
         (None, {'fields': ['zipcode']}),
         (None, {'fields': ['country']}),
+        (None, {'fields': ['photo_url']}),
     ]
     list_display = ('__str__','created')
     list_filter = ['created']
