@@ -4,7 +4,7 @@ create table journal (
         increment by 1 start with 1 cache 20 noorder nocycle nokeep noscale not null enable,
     "ENTITY_ID" number(11,0),
     "ENTITY_NAME" nvarchar2(200),
-    "ENTITY_DESC" nvarchar2(200),
+    "ENTITY_DESC" nclob,
     "CREATED" timestamp (6) not null enable,
     primary key ("ID")
     using index pctfree 10 initrans 2 maxtrans 255 compute statistics
