@@ -15,7 +15,7 @@ create or replace trigger humorously_club_insert_listener
             :new.id, --"ENTITY_ID" number(11,0),
             :new.name, --"ENTITY_NAME" nvarchar2(200),
             :new.title, --"ENTITY_DESC" nvarchar2(200),
-            :new.created, --"CREATED" timestamp (6) not null enable,
+            current_timestamp, --"CREATED" timestamp (6) not null enable,
             'Club' --primary key ("ID")
         );
     end;
