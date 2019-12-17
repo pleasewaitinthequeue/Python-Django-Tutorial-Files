@@ -13,8 +13,4 @@ into humorously_review ( ID, SCORE, TITLE, TEXT, JOKE_ID, USER_ID )
 into humorously_review ( ID, SCORE, TITLE, TEXT, JOKE_ID, USER_ID )
     values ( 81,0,'This joke sucks	i don't like this joke one bit.',1,1 )
 select 1 from dual;
-
-
-
-
-
+commit
