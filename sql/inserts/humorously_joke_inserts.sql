@@ -29,4 +29,4 @@ insert all
     into humorously_joke (ID,CREATED, TITLE, TEXT, CATEGORY_ID, USER_ID )
     values (77,'10-DEC-19 02.04.05.124392000 AM','TAKING THE BULL’S PILLS','"An elderly farmer had an old bull that lost its usual desire and no longer went near the cows. The farmer called the vet, who prescribed a pill to stimulate the bull’s interest. A few weeks later, the farmer ran into a friend, who asked, “How’s that bull?”  “Great!” said the farmer. “The bull is back to his former frisky self.”  “That’s fantastic. What miracle drug did the vet prescribe?”  “I don’t know,” said the farmer. “But it tastes like licorice.”"',1,1 )
 select 1 from dual;
-    
+    commit

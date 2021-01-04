@@ -15,7 +15,14 @@ into humorously_jokester
     (ID, CITY_RESIDENCE, STATE, ZIPCODE, COUNTRY, CREATED, USER_ID, PHOTO_URL)
 values
     ( 2,'Indianapolis','Indiana','46203','United States','08-DEC-19 04.54.01.883000000 PM',2,'https://lh4.googleusercontent.com/-QpKk-0G82AE/AAAAAAAAAAI/AAAAAAAAAAg/3r3-YNV9cew/photo.jpg' )
+
+into humorously_jokester 
+    (ID, CITY_RESIDENCE, STATE, ZIPCODE, COUNTRY, CREATED, USER_ID, PHOTO_URL)
+values
+    ( 24,'Elwood','Indiana (IN)','46036','United States','16-DEC-19 11.05.01.883000000 PM',24,'https://lh3.googleusercontent.com/a-/AAuE7mA2H_FsFab0dPLVGzjzPhYrTs8nYD7NdRvONGBj=s192-cc-rg' )
 select 1 from dual;
 
+COMMIT; 
 
-
+select *
+From humorously_jokester ; 
